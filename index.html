@@ -28,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation - Netflix Style */
         header {
             background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
             padding: 10px 0;
@@ -42,7 +41,6 @@
         header.scrolled {
             background: var(--header-black);
             padding: 5px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .container {
@@ -55,13 +53,10 @@
         }
 
         .logo img {
-            height: 50px; /* حجم اللوجو بتاعك */
+            height: 50px;
             width: auto;
             display: block;
-            transition: transform 0.3s ease;
         }
-        
-        .logo img:hover { transform: scale(1.05); }
 
         nav ul {
             list-style: none;
@@ -78,15 +73,11 @@
             font-weight: 500;
             font-size: 0.85em;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
         }
-
-        nav ul li a:hover { color: var(--primary-red); }
 
         /* Hero Section */
         .hero {
-            height: 85vh;
+            height: 80vh;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -112,18 +103,9 @@
         }
 
         .hero-content h1 {
-            font-size: 4.5em;
+            font-size: 4em;
             margin: 0;
             font-weight: 900;
-            letter-spacing: -2px;
-            text-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.3em;
-            margin: 15px 0 30px 0;
-            color: #efefef;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
         }
 
         .btn {
@@ -134,33 +116,27 @@
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1em;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            background-color: #ff1e29;
-            transform: scale(1.08);
-            box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
-        }
-
-        /* Card System */
+        /* Card System - تم التعديل لتصبح بوسترات طولية */
         .section-title {
             font-size: 1.5em;
             padding: 40px 4% 20px 4%;
-            margin: 0;
             font-weight: bold;
         }
 
         .content-row {
             padding: 0 4% 60px 4%;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .project-card {
-            width: 100%;
-            max-width: 350px;
+            width: 240px; /* عرض مناسب للبوستر الطولي */
             background: #181818;
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
             transition: 0.4s ease;
             cursor: pointer;
@@ -169,37 +145,30 @@
 
         .project-card:hover {
             transform: scale(1.05);
-            z-index: 20;
             border-color: #444;
         }
 
         .project-card img {
             width: 100%;
-            aspect-ratio: 16/9;
+            aspect-ratio: 2 / 3; /* النسبة الذهبية للبوسترات الطولية */
             object-fit: cover;
         }
 
-        .card-info { padding: 15px; }
-        .card-info h3 { margin: 0; font-size: 1.1em; }
-        .card-info p { color: var(--text-dim); font-size: 0.85em; margin: 10px 0; }
+        .card-info { padding: 12px; }
+        .card-info h3 { margin: 0; font-size: 1em; }
+        .card-info p { color: var(--text-dim); font-size: 0.8em; margin: 8px 0; }
 
-        /* Footer */
         footer {
-            padding: 60px 0;
-            border-top: 2px solid #222;
+            padding: 40px 0;
             background: #000;
             text-align: center;
             color: #666;
             font-size: 0.8em;
         }
 
-        .social-links { margin-bottom: 15px; }
-        .social-links a { color: #888; margin: 0 10px; text-decoration: none; font-size: 1.2em; }
-        .social-links a:hover { color: #fff; }
-
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.8em; }
-            nav { display: none; }
+            .hero-content h1 { font-size: 2.5em; }
+            .project-card { width: 45%; } /* في الموبايل يظهر بوسترين جنب بعض */
         }
     </style>
 </head>
@@ -214,7 +183,6 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#work">Originals</a></li>
-                    <li><a href="#vision">Studio</a></li>
                 </ul>
             </nav>
         </div>
@@ -223,8 +191,8 @@
     <main>
         <section id="home" class="hero" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.2) 100%), url('images/hero-bg.jpg');">
             <div class="hero-content">
-                <h1>Dino Movie Streamium</h1>
-                <p>The first Egyptian silent epic. Survive the late Cretaceous period in an immersive 4K experience.</p>
+                <h1>The Legendary Pentagram</h1>
+                <p>The first Egyptian silent epic. Experience the Cretaceous period like never before.</p>
                 <a href="https://www.youtube.com/watch?v=7jtr0nLtako" target="_blank" class="btn">► Play Now</a>
             </div>
         </section>
@@ -232,37 +200,25 @@
         <h2 class="section-title">Original Series</h2>
         <div class="content-row">
             <div class="project-card">
-                <img src="images/pentagram-poster.jpg" alt="Cretaceous Period">
+                <img src="images/pentagram-poster.jpg" alt="The Legendary Pentagram Poster">
                 <div class="card-info">
-                    <h3>The Legendary Pentagram: Cretaceous Period</h3>
-                    <p>Independent Animation | No Dialogue | Atmospheric</p>
-                    <a href="https://www.youtube.com/watch?v=7jtr0nLtako" target="_blank" style="color: var(--primary-red); font-weight: bold; font-size: 0.9em;">Watch Trailer</a>
+                    <h3>The Legendary Pentagram</h3>
+                    <p>S1: Cretaceous Period</p>
+                    <a href="https://www.youtube.com/watch?v=7jtr0nLtako" target="_blank" style="color: var(--primary-red); font-weight: bold; font-size: 0.8em; text-decoration: none;">Watch Trailer</a>
                 </div>
             </div>
         </div>
-
-        <section id="vision" style="padding: 100px 4%; background: #000;">
-            <h2 style="color: var(--primary-red);">Our Vision</h2>
-            <p style="font-size: 1.2em; color: #ccc; max-width: 800px;">Dino Movie Studios is the home of pure visual storytelling. No language barriers, just the raw power of animation. Founded by Malek Mohamed.</p>
-        </section>
     </main>
 
     <footer>
-        <div class="social-links">
-            <a href="https://www.youtube.com/@DinoMovieStudios" target="_blank">YouTube</a>
-        </div>
         <p>&copy; 2026 Dino Movie Studios | Streamium Platform</p>
     </footer>
 
     <script>
-        // حركة الهيدر لما تنزل بالصفحة
         window.onscroll = function() {
             var navbar = document.getElementById("navbar");
-            if (window.pageYOffset > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
+            if (window.pageYOffset > 50) navbar.classList.add("scrolled");
+            else navbar.classList.remove("scrolled");
         };
     </script>
 </body>
