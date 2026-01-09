@@ -73,11 +73,13 @@
             font-weight: 500;
             font-size: 0.85em;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Hero Section */
+        nav ul li a:hover { color: var(--primary-red); }
+
         .hero {
-            height: 80vh;
+            height: 85vh;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -103,9 +105,10 @@
         }
 
         .hero-content h1 {
-            font-size: 4em;
+            font-size: 4.5em;
             margin: 0;
             font-weight: 900;
+            letter-spacing: -2px;
         }
 
         .btn {
@@ -119,10 +122,10 @@
             transition: 0.3s;
         }
 
-        /* Card System - تم التعديل لتصبح بوسترات طولية */
         .section-title {
             font-size: 1.5em;
-            padding: 40px 4% 20px 4%;
+            padding: 60px 4% 20px 4%; /* زودت المساحة عشان الزرار ينزل صح */
+            margin: 0;
             font-weight: bold;
         }
 
@@ -134,7 +137,7 @@
         }
 
         .project-card {
-            width: 240px; /* عرض مناسب للبوستر الطولي */
+            width: 240px;
             background: #181818;
             border-radius: 6px;
             overflow: hidden;
@@ -150,25 +153,26 @@
 
         .project-card img {
             width: 100%;
-            aspect-ratio: 2 / 3; /* النسبة الذهبية للبوسترات الطولية */
+            aspect-ratio: 2 / 3;
             object-fit: cover;
         }
 
-        .card-info { padding: 12px; }
+        .card-info { padding: 15px; }
         .card-info h3 { margin: 0; font-size: 1em; }
         .card-info p { color: var(--text-dim); font-size: 0.8em; margin: 8px 0; }
 
         footer {
-            padding: 40px 0;
+            padding: 60px 0;
             background: #000;
             text-align: center;
             color: #666;
             font-size: 0.8em;
+            border-top: 1px solid #222;
         }
 
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 2.5em; }
-            .project-card { width: 45%; } /* في الموبايل يظهر بوسترين جنب بعض */
+            .project-card { width: 45%; }
         }
     </style>
 </head>
@@ -182,8 +186,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#work">Originals</a></li>
-                </ul>
+                    <li><a href="#work">Originals</a></li> </ul>
             </nav>
         </div>
     </header>
@@ -192,12 +195,13 @@
         <section id="home" class="hero" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.2) 100%), url('images/hero-bg.jpg');">
             <div class="hero-content">
                 <h1>The Legendary Pentagram</h1>
-                <p>The first Egyptian silent epic. Experience the Cretaceous period like never before.</p>
+                <p>The first Egyptian silent epic. Survive the late Cretaceous period.</p>
                 <a href="https://www.youtube.com/watch?v=7jtr0nLtako" target="_blank" class="btn">► Play Now</a>
             </div>
         </section>
 
-        <h2 class="section-title">Original Series</h2>
+        <h2 id="work" class="section-title">Original Series</h2>
+        
         <div class="content-row">
             <div class="project-card">
                 <img src="images/pentagram-poster.jpg" alt="The Legendary Pentagram Poster">
